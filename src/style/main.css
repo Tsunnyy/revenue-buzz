@@ -1,0 +1,1266 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: Gilroy-Bold;
+  src: url(../fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-ExtraBold;
+  src: url(../fonts/Gilroy-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-Light;
+  src: url(../fonts/Gilroy-Light.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-Medium;
+  src: url(../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-Regular;
+  src: url(../fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-SemiBold;
+  src: url(../fonts/Gilroy-SemiBold.ttf);
+}
+
+body {
+  font-family: Gilroy-Regular;
+  background-color: #f4f5f7;
+}
+
+/* Navbar Css */
+.navbar-toggler,
+button.responsive-navbar-nav:focus:not(:focus-visible),
+.navbar-toggler:focus {
+  border: none;
+  outline: none !important;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background: url(/images/icons/menu.svg);
+  width: 70px;
+  height: 24px;
+  border: none;
+}
+
+.padding-lr-nav {
+  padding-inline: 2.375rem;
+}
+
+.navbar {
+  padding-block: 1.875rem;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: -134px;
+  top: -211px;
+  width: 354px;
+  height: 354px;
+  border-radius: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.navbar ul {
+  gap: 24px;
+}
+
+.navbar ul li.after991px button,
+.navbar ul li a,
+.navbar ul li .btn-primary {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  color: #292929;
+  text-decoration: none;
+  font-family: Gilroy-Regular;
+  transition: 0.4s all;
+}
+
+.navbar ul li.after991px button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.navbar ul li.after991px,
+.after991px {
+  display: none;
+}
+
+.headerContactInfo {
+  background-color: #292929;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.headerContactInfo .quickContact svg {
+  max-width: 20px;
+  margin-right: 10px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.headerContactInfo .quickContact a,
+.headerContactInfo .quickContact p {
+  font-family: Gilroy-Medium;
+  font-weight: 400;
+  font-size: 12.71px;
+  line-height: 39.72px;
+}
+
+.navbar ul li .dropdown {
+  padding: 0 10px;
+}
+.navbar ul li .dropdown-item {
+  transition: 0.5s all ease;
+  padding-inline: 6px;
+  white-space: break-spaces;
+  border-radius: 6px;
+  line-height: 16.4px;
+}
+
+.navbar ul li .dropdown-menu.show {
+  max-width: 120px;
+  min-width: 120px;
+  box-shadow: 0px 0px 16px 0px #00000026;
+  border: none;
+}
+
+.navbar ul li .dropdown-item:hover {
+  background-color: #f9c704;
+  color: #fff;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover {
+  font-family: Gilroy-Bold;
+  color: #f9c704;
+}
+
+.navbar ul li .btn-primary,
+.navbar ul li .btn-primary:focus-visible,
+.navbar ul li .btn-primary:focus,
+.navbar ul li .btn-primary:hover {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #292929;
+  opacity: 1;
+}
+
+.navbar ul li .btn-primary {
+  padding: -0;
+  position: relative;
+  z-index: 2;
+}
+
+.navbar ul li .show.dropdown {
+  padding: 0 10px;
+}
+
+.navbar ul li .dropdown-menu {
+  padding: 40px 10px 10px;
+  top: -11px;
+  z-index: 0;
+}
+
+.navbar ul li .dropdown-toggle::after {
+  border: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 256 256'%3E%3Cpath fill='%23292929' d='m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z'/%3E%3C/svg%3E");
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='%23292929' d='M12 14.5a.74.74 0 0 1-.53-.22L8 10.78a.75.75 0 0 1 1-1.06l3 3l3-3a.75.75 0 0 1 1 1.06l-3.5 3.5a.74.74 0 0 1-.5.22'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -15px;
+  margin: auto;
+  width: 14px;
+  height: 15px;
+}
+
+.letsGrow {
+  display: inline-block;
+  border: 1px solid #292929;
+  font-family: Gilroy-Medium;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.56px;
+  text-align: center;
+  padding: 12px 0;
+  width: 130px;
+  border-radius: 35px;
+  color: #292929;
+  transition: 0.4s all;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.letsGrow.white {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.letsGrow:hover {
+  background-color: #f9c704;
+  color: #fff !important;
+  border: 1px solid #f9c704;
+}
+
+/* Navbar Css */
+
+/* Footer CSS */
+
+.footerMain {
+  background-color: #292929;
+  height: 100%;
+  padding: 3.75rem 0 4.5rem;
+}
+
+.padding-lr-footer {
+  padding: 0 6.25rem 0 3.938rem;
+}
+
+.copyRightTag {
+  padding: 2.188rem 0;
+  background-color: #f9c704;
+}
+
+.copyRightTag p {
+  font-family: Gilroy-Bold;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.33px;
+  color: #292929;
+}
+
+.footerPartOne {
+  display: flex;
+  gap: 12.188rem;
+  justify-content: space-between;
+  padding-bottom: 7.438rem;
+}
+
+.footerPartOneL h2 {
+  font-family: Gilroy-Light;
+  font-size: 5.313rem;
+  font-weight: 400;
+  line-height: 4.781rem;
+  color: #fff;
+}
+
+.footerPartOneL p,
+.footerPartOneL span {
+  font-family: Gilroy-Light;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  text-align: left;
+  color: #fff;
+  margin: 40px 0 29px;
+}
+
+.footerPartOneL span {
+  color: #f9c704;
+}
+
+.quickContact {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.75rem;
+}
+
+.quickContact a,
+.quickContact p {
+  font-family: Gilroy-Medium;
+  font-size: 20.96px;
+  font-weight: 400;
+  line-height: 65.5px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.quickContact svg {
+  margin-right: 18px;
+}
+
+.footerPartOneR form {
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 2.75rem 2.313rem;
+  width: 532px;
+  margin-top: 19px;
+}
+
+.footerPartOneR {
+  position: relative;
+  isolation: isolate;
+}
+
+.footerPartOneR::after {
+  content: "";
+  position: absolute;
+  width: 486px;
+  height: 540px;
+  border: 1px solid #f9c704;
+  left: -41px;
+  top: 69px;
+  z-index: -2;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+.footerPartOneR form label {
+  font-family: Gilroy-Medium;
+  font-size: 13.27px;
+  font-weight: 400;
+  line-height: 15.93px;
+  color: #292929;
+  padding-top: 4px;
+}
+
+.footerPartOneR form label span {
+  color: #ff5800;
+}
+
+.formInner {
+  display: grid;
+  gap: 19px;
+  grid-template-columns: 79px 1fr;
+  margin-bottom: 20px;
+}
+
+.formInner textarea,
+.formInner input {
+  background-color: #f1f1f1;
+  border-radius: 4.15px;
+  outline: none;
+  border: none;
+  padding: 0 12px;
+  font-family: Gilroy-Light;
+  font-size: 13.27px;
+  font-weight: 400;
+  line-height: 41.48px;
+  color: #787878;
+  resize: none;
+}
+
+.footerPartOneR button {
+  background-color: #333338;
+  border: 1px solid #333338;
+  padding: 12px 28px;
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #fff;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s all ease-in;
+}
+
+.footerPartOneR button.active {
+  background: #25cd25;
+  border: 1px solid #25cd25;
+}
+
+.footerPartOneR button:hover {
+  background: #ffc81a;
+  border: 1px solid #ffc81a;
+}
+
+.footerPartOneR button svg {
+  margin-left: 8px;
+  font-size: 20px;
+}
+
+.footerPartTwoLGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.2rem;
+  width: 100%;
+}
+
+.footerPartTwoLGrid p {
+  font-family: Gilroy-Bold;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 19px;
+  line-height: 19.81px;
+  letter-spacing: 0.3em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.footerPartTwoLGrid a img {
+  margin-right: 10px;
+}
+
+.footerPartTwoLGrid a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-family: Gilroy-Medium;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #787878;
+  text-decoration: none;
+}
+
+.footerPartTwo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7.438rem;
+}
+
+.footerPartTwoR {
+  gap: 30px;
+}
+
+/* .footerPartTwoR  */
+
+.footerPartTwoR h4 {
+  font-family: Gilroy-Light;
+  font-size: 3.75rem;
+  font-weight: 300;
+  line-height: 4.501rem;
+  color: #fff;
+}
+
+/* Footer CSS */
+
+/* Home Page CSS */
+.heroSection {
+  padding: 0 3.938rem;
+}
+
+.heroSectionL {
+  margin-top: 3.438rem;
+}
+
+.heroSectionL span {
+  font-family: Gilroy-Light;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #292929;
+}
+
+.heroSectionL h2 {
+  font-family: Gilroy-Light;
+  font-size: 5.313rem;
+  font-weight: 400;
+  line-height: 4.781rem;
+}
+.heroSectionL h2.dark {
+  font-family: Gilroy-SemiBold;
+}
+.heroSectionL p {
+  font-family: Gilroy-SemiBold;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color: #292929;
+  margin: 3.75rem 0 1.875rem;
+}
+.heroSectionL p span {
+  font-family: Gilroy-SemiBold;
+  color: #f9c704;
+}
+/* Home Page CSS */
+
+/* Home Page OverView CSS */
+.overViewSection {
+  padding-inline: 2.375rem;
+  margin-top: -20px;
+}
+
+.overViewBgImage {
+  background-image: url(/images/overview.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed;
+  background-position: center; */
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 5.188rem 22px 3.938rem;
+}
+
+.overViewBgImage p {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  text-align: justify;
+  color: #ffffff;
+  margin-bottom: 34px;
+}
+
+.title {
+  font-family: Gilroy-Light;
+  font-size: 5.313rem;
+  font-weight: 400;
+  line-height: 4.781rem;
+  color: #292929;
+}
+
+/* Home Page OverView CSS */
+
+/* Home Page Service CSS */
+.ourServicesSection {
+  padding: 3.125rem;
+}
+.titleWithSpan span {
+  font-family: Gilroy-Regular;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: justify;
+  color: #787878;
+  margin: 20px 0 40px;
+  display: inline-block;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.ourServicesSection .serviceGridInner {
+  padding: 1.5rem 2.125rem;
+  transition: 0.4s all ease-in;
+  border-radius: 20px;
+}
+
+.ourServicesSection .serviceGridInner:hover {
+  background-color: #292929;
+}
+
+.serviceGrid svg path {
+  transition: 0.4s all ease-in;
+}
+.serviceGrid h5 {
+  font-family: Gilroy-SemiBold;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.5px;
+  color: #292929;
+  margin: 20px 0;
+  transition: 0.4s all ease-in;
+}
+.serviceGrid p {
+  font-family: Gilroy-Regular;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: justify;
+  margin-bottom: 3.125rem;
+  transition: 0.4s all ease-in;
+}
+.serviceGrid span svg {
+  margin-left: 6px;
+}
+.serviceGrid span {
+  font-family: Gilroy-SemiBold;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.15px;
+  text-align: justify;
+  color: #292929;
+  transition: 0.4s all ease-in;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ourServicesSection .serviceGridInner:hover h5,
+.ourServicesSection .serviceGridInner:hover svg path,
+.ourServicesSection .serviceGridInner:hover p {
+  color: #fff;
+  fill: #fff;
+}
+
+.ourServicesSection .serviceGridInner:hover svg.stroke path {
+  stroke: #fff;
+}
+
+.ourServicesSection .serviceGridInner:hover span,
+.ourServicesSection .serviceGridInner:hover span svg path {
+  color: #f9c704;
+  fill: #f9c704;
+}
+/* Home Page Service CSS */
+
+/* Home Page Why CSS */
+.whyChooseUs {
+  padding: 3.125rem 2.375rem;
+}
+
+.whyChooseUsInner {
+  background-color: #fff;
+  padding: 3.125rem;
+}
+
+.whyChooseUs .serviceGrid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin: 40px 0 35px;
+}
+
+.whyChooseUs .serviceGrid h5 {
+  margin: 10px 0;
+}
+.whyChooseUs .serviceGrid p {
+  margin: 0;
+}
+.whyChooseDesc {
+  gap: 5rem;
+  background: linear-gradient(272.79deg, #1b1b1b 0%, #292929 100%);
+  padding: 2.813rem 3.125rem;
+  border-radius: 20px;
+}
+
+.whyChooseDesc p {
+  font-family: Gilroy-Regular;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 31.2px;
+  text-align: justify;
+  color: #fff;
+}
+
+.whyChooseUsInner .letsGrow {
+  margin: 2.5rem auto 0;
+}
+/* Home Page Why CSS */
+
+/* Home Page Client CSS */
+.clientSection {
+  padding: 0 5.625rem 5.625rem;
+}
+
+.ptagwithquote {
+  padding: 3.125rem 0 12.25rem;
+  gap: 2.5rem;
+}
+
+.reviewStars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.reviewStars::after,
+.reviewStars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 9.625rem;
+  height: 0.5px;
+  background-color: #292929;
+}
+
+.reviewStars::after {
+  right: 120%;
+}
+
+.reviewStars::before {
+  left: 120%;
+}
+
+.clientSection p {
+  font-family: Gilroy-Medium;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  text-align: justify;
+  color: #292929;
+}
+
+.clientSection .carousel-caption h6 {
+  font-family: Gilroy-SemiBold;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  text-align: justify;
+  color: #292929;
+  margin: 15px 0 4px;
+  text-align: center;
+}
+.clientSection .carousel-caption span {
+  font-family: Gilroy-Light;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  text-align: justify;
+  color: #292929;
+}
+
+.clientSection .carousel-indicators [data-bs-target] {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background-color: #d9d9d9;
+}
+.clientSection .carousel-indicators .active {
+  background-color: #292929;
+}
+.clientSection .carousel-indicators {
+  bottom: -40px;
+}
+.clientSection .carousel-control-prev,
+.clientSection .carousel-control-next {
+  display: none;
+}
+/* Home Page Client CSS */
+
+/* About Page CSS */
+.page_head_text h1 {
+  font-family: Gilroy-SemiBold;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 54px;
+  text-align: center;
+  color: #292929;
+}
+
+.page_head_text h1 strong {
+  font-family: Gilroy-Light;
+  font-weight: 400;
+}
+
+.page_head_text p {
+  font-family: Gilroy-SemiBold;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: center;
+  color: #292929;
+  margin: 1.25rem 0 1.875rem;
+}
+.page_head_text p span {
+  font-family: Gilroy-SemiBold;
+  color: #f9c704;
+}
+
+.first_hero_section .letsGrow {
+  margin: 30px 0 0;
+  display: inline-block;
+}
+
+.first_hero_section picture img {
+  max-width: 1076px;
+}
+
+.first_hero_section {
+  margin: 3.438rem 0 2.6rem;
+}
+
+.first_hero_section small {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  text-align: center;
+  color: #292929;
+  display: inline-block;
+  margin: 3.75rem 0 20px;
+  max-width: 70%;
+}
+
+.verticleLine {
+  width: 0.5px;
+  height: 64px;
+  background-color: #292929;
+  margin: auto;
+}
+
+.whatWeDOSection {
+  padding: 0 2.375rem;
+}
+
+.whatWeDOSectionInner {
+  padding: 4.063rem 4.063rem 2.188rem;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.whatWeDOSection .serviceGrid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-top: 3.75rem;
+}
+
+.aboutWhyChooseUs {
+  padding: 3.75rem 6rem;
+}
+
+.aboutWhyChooseUs p {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  text-align: justify;
+  margin-top: 1.875rem;
+  color: #787878;
+}
+
+.aboutWhyChooseUsMainL {
+  padding: 0 4.063rem 0 0;
+}
+
+.whySlogan {
+  padding: 1.875rem;
+  border-radius: 20px;
+  background-color: #fff;
+  margin-top: 1.875rem;
+  text-align: center;
+}
+
+.whySlogan h3 {
+  font-family: Gilroy-Light;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color: #292929;
+}
+
+.whySlogan h2 {
+  font-family: Gilroy-SemiBold;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 31.85px;
+  color: #292929;
+}
+
+.whyWeAreHereMain {
+  padding: 0 2.375rcap;
+  margin: 20px 0 90px;
+}
+
+.whyWeAreHereInner {
+  background: linear-gradient(272.79deg, #1b1b1b 0%, #292929 100%);
+  border-radius: 20px;
+  padding: 3.75rem 3.125rem;
+}
+
+.whyWeAreHereInner h5 {
+  font-family: Gilroy-Light;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 54px;
+  margin-bottom: 1.875rem;
+}
+
+.whyWeAreHereInnerL h5 {
+  color: #fff;
+}
+
+.whyWeAreHereInner p {
+  font-family: Gilroy-Regular;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: justify;
+}
+
+.whyWeAreHereInnerL p {
+  color: #a3a3a3;
+}
+
+.whyWeAreHereInnerL {
+  padding: 0 40px 0 0;
+}
+
+.whyWeAreHereInnerR {
+  background-color: #f9c704;
+  padding: 4.375rem 3.125rem;
+  border-radius: 20px;
+  position: absolute;
+  right: 20px;
+  top: -40px;
+  /* max-width: 41.313rem; */
+  max-width: 661px;
+}
+
+.keyPointsMain {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1.875rem 0;
+}
+
+.keyPointsInner {
+  text-align: center;
+  padding: 18px;
+  transition: 0.7s all ease;
+  border-radius: 14px;
+}
+
+.keyPointsInner svg {
+  max-width: 34px;
+  transition: 0.7s all ease;
+}
+
+.keyPointsInner p {
+  text-align: center;
+  transition: 0.7s all ease;
+}
+
+.keyPointsInner:hover {
+  background-color: #fff;
+}
+
+/* About Page CSS */
+
+/* Service Page CSS */
+
+.serviceKeyFeaturesMain {
+  padding: 0 2.375rem;
+}
+
+.serviceKeyFeatures {
+  padding: 2.5rem 4.125rem;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.serviceKeyFeatures h6 {
+  font-family: Gilroy-Medium;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 31.54px;
+  text-align: center;
+  color: #fff;
+  border-radius: 20px;
+  background-color: #292929;
+  padding: 20px 4.375rem;
+  margin: 16px 0 2.5rem;
+}
+
+.digitalMarketingAgencyMain small {
+  margin-top: 0;
+}
+
+.serviceKeyFeatures small {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  text-align: center;
+  color: #292929;
+}
+
+.serviceKeyFeatures .serviceGrid {
+  gap: 2.5rem;
+}
+
+.serviceKeyFeatures .serviceGrid p {
+  margin: 0;
+}
+
+.logoDiv {
+  display: flex;
+}
+
+.serviceKeyFeaturesMain .letsGrow {
+  margin: 30px 0 20px;
+}
+
+.commitmentsInner {
+  max-width: 940px;
+  gap: 2.5rem;
+  margin: 3.75rem auto;
+}
+
+.commitmentsInner p {
+  font-family: Gilroy-Medium;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 31.54px;
+  color: #292929;
+}
+
+.websitePerformanceSection {
+  padding: 0 8.125rem;
+}
+
+.websitePerformanceMain {
+  background: #292929;
+  padding: 2rem;
+  border-radius: 0 0 20px 20px;
+}
+.websitePerformanceL p {
+  font-family: Gilroy-Regular;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 31.2px;
+  text-align: justify;
+  color: #ffffff;
+  margin: 2rem 0;
+}
+
+.websitePerformanceL img {
+  max-width: 78px;
+}
+.websitePerformanceL span {
+  font-family: Gilroy-Regular;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: justify;
+  color: #787878;
+}
+
+.websitePerformanceR img {
+  position: absolute;
+  right: 0;
+  height: 466px;
+  top: -35px;
+}
+
+/* Modal CSS */
+.modal-content {
+  background: #272727;
+  box-shadow: 0px 0px 20px 0px #00000026;
+}
+
+.modal-dialog {
+  max-width: 1061px;
+}
+
+.modal-dialog .footerPartOneR::after {
+  display: none;
+}
+
+.modal-dialog .footerPartOneR form {
+  width: 100%;
+}
+
+.modal-dialog .footerPartOne {
+  gap: 3.125rem;
+  padding: 0;
+}
+
+.modal-body {
+  padding: 2.813rem 2.188rem;
+}
+
+.modal-body .footerPartOneL h2 {
+  font-family: Gilroy-Medium;
+
+  font-size: 36px;
+  line-height: 32.4px;
+}
+.modal-body .footerPartOneL p,
+.modal-body .footerPartOneL span {
+  font-family: Gilroy-Light;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+}
+
+.modal-body .quickContact a,
+.modal-body .quickContact p {
+  font-family: Gilroy-Medium;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 65.5px;
+}
+.modal-body .formInner {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.modal-body .formInner:has(button[type="submit"]) {
+  margin: 0;
+}
+
+.modal-content .closeIcons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+}
+
+.modal-content .closeIcons img {
+  max-width: 24px;
+}
+
+.serviceOptions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+.serviceOptions label {
+  font-family: Gilroy-Light;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  line-height: 13.2px;
+  color: #292929;
+}
+
+.serviceOptions input {
+  width: 0;
+  opacity: 0;
+}
+
+.serviceOptions svg {
+  width: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+/* Modal CSS */
