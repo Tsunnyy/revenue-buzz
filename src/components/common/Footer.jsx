@@ -12,7 +12,7 @@ const Footer = () => {
                 <h2>Contact Us</h2>
                 <p>
                   Experience growth effortlessly! Take that <br /> first step
-                  towards success with just one click. 
+                  towards success with just one click.
                 </p>
                 <span>Don't miss out!</span>
 
@@ -208,15 +208,36 @@ const Footer = () => {
                 </div>
                 <div className="footerPartTwoLGridInner">
                   <p>Explore</p>
-                  <Link to="/aboutus">About Us</Link>
-                  <Link to="/">Blogs</Link>
-                  <Link to="/">Contact Us</Link>
+                  <Link to="/aboutus" onClick={() => window.scrollTo(0, 0)}>
+                    About Us
+                  </Link>
+                  <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+                    Blogs
+                  </Link>
+                  <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+                    Contact Us
+                  </Link>
                 </div>
                 <div className="footerPartTwoLGridInner">
                   <p>Services</p>
-                  <Link to="/revenuemanagement">Revenue Management</Link>
-                  <Link to="/digital-marketing-agency">Digital Marketing</Link>
-                  <Link to="/website-development">Web Development</Link>
+                  <Link
+                    to="/revenuemanagement"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    Revenue Management
+                  </Link>
+                  <Link
+                    to="/digital-marketing-agency"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    Digital Marketing
+                  </Link>
+                  <Link
+                    to="/website-development"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    Web Development
+                  </Link>
                 </div>
                 {/* <div className="footerPartTwoLGridInner">
                   <p>Company</p>

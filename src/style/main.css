@@ -470,7 +470,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 
 .footerPartOneR form .formInner:nth-child(1) label,
 .footerPartOneR form .formInner:nth-child(2) label,
-.footerPartOneR form .formInner:nth-child(3) label{
+.footerPartOneR form .formInner:nth-child(3) label {
   padding-top: 13px;
 }
 
@@ -1269,6 +1269,11 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-bottom: 15px;
+}
+
+.serviceOptionsInner {
+  display: flex;
+  align-items: center;
 }
 
 .serviceOptions label {
