@@ -484,7 +484,7 @@ const About = () => {
               </p>
 
               <div className="keyPointsMain">
-                <div className="keyPointsInner">
+                <Link to="/revenuemanagement" className="keyPointsInner">
                   <svg
                     className="stroke"
                     width="40"
@@ -520,8 +520,8 @@ const About = () => {
                   </svg>
 
                   <p>Revenue Management</p>
-                </div>
-                <div className="keyPointsInner">
+                </Link>
+                <Link to="/digital-marketing-agency" className="keyPointsInner">
                   <svg
                     width="40"
                     height="40"
@@ -568,8 +568,8 @@ const About = () => {
                   </svg>
 
                   <p>Digital Marketing</p>
-                </div>
-                <div className="keyPointsInner">
+                </Link>
+                <Link to="/website-development" className="keyPointsInner">
                   <svg
                     width="40"
                     height="40"
@@ -584,7 +584,7 @@ const About = () => {
                   </svg>
 
                   <p>Website Development</p>
-                </div>
+                </Link>
               </div>
 
               <p>

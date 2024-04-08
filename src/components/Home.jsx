@@ -408,7 +408,7 @@ const Home = () => {
             </button>
           </div>
           <div className="serviceGrid">
-            <div className="serviceGridInner">
+            <Link to="/revenuemanagement" className="serviceGridInner">
               <svg
                 className="stroke"
                 width="40"
@@ -452,7 +452,7 @@ const Home = () => {
                 nights and ADR. With Revenue Buzz, expect real-time updates and
                 decisive actions, ensuring maximum revenue for your hotels.
               </p>
-              <span onClick={() => setShow(true)}>
+              <span>
                 Learn More{" "}
                 <svg
                   width="12"
@@ -467,8 +467,8 @@ const Home = () => {
                   />
                 </svg>
               </span>
-            </div>
-            <div className="serviceGridInner">
+            </Link>
+            <Link to="/digital-marketing-agency" className="serviceGridInner">
               <svg
                 width="40"
                 height="40"
@@ -523,7 +523,7 @@ const Home = () => {
                 Google Search Console for continuous website optimization,
                 ensuring optimal performance and revenue growth for hotels.{" "}
               </p>
-              <span onClick={() => setShow(true)}>
+              <span>
                 Learn More{" "}
                 <svg
                   width="12"
@@ -538,8 +538,8 @@ const Home = () => {
                   />
                 </svg>
               </span>
-            </div>
-            <div className="serviceGridInner">
+            </Link>
+            <Link to="/website-development" className="serviceGridInner">
               <svg
                 width="40"
                 height="40"
@@ -564,7 +564,7 @@ const Home = () => {
                 presence and achieve success in the competitive hospitality
                 industry.
               </p>
-              <span onClick={() => setShow(true)}>
+              <span>
                 Learn More{" "}
                 <svg
                   width="12"
@@ -579,7 +579,7 @@ const Home = () => {
                   />
                 </svg>
               </span>
-            </div>
+            </Link>
           </div>
         </div>
         <div className="whyChooseUs">
@@ -663,7 +663,7 @@ const Home = () => {
           <div className="titleWithSpan d-flex justify-content-center align-items-start">
             <h3 className="title text-center">Hear it from Our Clients</h3>
           </div>
-          <Carousel fade>
+          <Carousel>
             <Carousel.Item>
               <div className="ptagwithquote d-flex justify-content-center align-items-start">
                 <img
@@ -672,9 +672,9 @@ const Home = () => {
                   className="img-fluid"
                 />
                 <p>
-                  Navig positions your hotel
-                  competitively, adapting to real-time shifts for maximum
-                  revenue. Advanced forecasting and distribution management.
+                  Navig positions your hotel competitively, adapting to
+                  real-time shifts for maximum revenue. Advanced forecasting and
+                  distribution management.
                 </p>
                 <img
                   style={{ transform: "rotate(180deg)" }}
@@ -704,8 +704,9 @@ const Home = () => {
                 />
                 <p>
                   Navigate the hospitality market with Revenue Buzz's Revenue
-                  Management. Swift, dynamic pricing positions ng to real-time shifts for maximum
-                  revenue. Advanced forecasting and distribution management.
+                  Management. Swift, dynamic pricing positions ng to real-time
+                  shifts for maximum revenue. Advanced forecasting and
+                  distribution management.
                 </p>
                 <img
                   style={{ transform: "rotate(180deg)" }}
@@ -734,8 +735,8 @@ const Home = () => {
                   className="img-fluid"
                 />
                 <p>
-                  real-time shifts for maximum
-                  revenue. Advanced forecasting and distribution management.
+                  real-time shifts for maximum revenue. Advanced forecasting and
+                  distribution management.
                 </p>
                 <img
                   style={{ transform: "rotate(180deg)" }}

@@ -49,6 +49,12 @@ const DigitalMarketing = () => {
       iconPath: "/images/service/marketing/3.svg",
     },
     {
+      title: "Google My Business (GMB) Management",
+      description:
+        "Partner with Revenue Buzz to optimize your Google My Business listing for enhanced customer engagement, lead conversion, and sustained business growth.",
+      iconPath: "/images/service/marketing/8.svg",
+    },
+    {
       title: "Pay-Per-Click (PPC)",
       description:
         "Maximize your revenue with our cost-effective PPC advertising services. Our professionals have extensive experience in managing successful advertising campaigns across various industries.",
@@ -410,28 +416,42 @@ const DigitalMarketing = () => {
 
           <div className="serviceGrid">
             {services.map((val, index) => {
-              if (index === 5) {
-                return (
-                  <>
-                    <div className="logoDiv h-100 justify-content-center align-items-center">
-                      <img
-                        src="/images/logo_black.svg"
-                        alt="Logo"
-                        className="img-fluid"
-                      />
-                    </div>
-                  </>
-                );
-              } else {
-                return (
-                  <div className="serviceGridInner">
-                    <img src={val.iconPath} alt="Icon" />
-                    <h5>{val.title}</h5>
-                    <p>{val.description}</p>
-                  </div>
-                );
-              }
+              // if (index === 5) {
+              //   return (
+              //     <>
+              //       <div className="logoDiv h-100 justify-content-center align-items-center">
+              //         <img
+              //           src="/images/logo_black.svg"
+              //           alt="Logo"
+              //           className="img-fluid"
+              //         />
+              //       </div>
+              //     </>
+              //   );
+              // } else {
+              //   return (
+              //     <div className="serviceGridInner">
+              //       <img src={val.iconPath} alt="Icon" />
+              //       <h5>{val.title}</h5>
+              //       <p>{val.description}</p>
+              //     </div>
+              //   );
+              // }
+              return (
+                <div className="serviceGridInner">
+                  <img src={val.iconPath} alt="Icon" />
+                  <h5>{val.title}</h5>
+                  <p>{val.description}</p>
+                </div>
+              );
             })}
+            <div className="logoDiv h-100 justify-content-center align-items-center">
+              <img
+                src="/images/logo_black.svg"
+                alt="Logo"
+                className="img-fluid"
+              />
+            </div>
           </div>
           <div className="text-md-center">
             <button className="letsGrow" onClick={() => setShow(true)}>

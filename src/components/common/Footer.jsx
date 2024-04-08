@@ -218,13 +218,13 @@ const Footer = () => {
                   <Link to="/digital-marketing-agency">Digital Marketing</Link>
                   <Link to="/website-development">Web Development</Link>
                 </div>
-                <div className="footerPartTwoLGridInner">
+                {/* <div className="footerPartTwoLGridInner">
                   <p>Company</p>
                   <Link to="/">Investor Relations</Link>
                   <Link to="/">Disclaimer</Link>
                   <Link to="/">Terms & Conditions</Link>
                   <Link to="/">Privacy Policy</Link>
-                </div>
+                </div> */}
               </div>
               {/* </div> */}
               {/* <div className="col-lg-4 pe-0 footerPartTwoR"> */}

@@ -158,6 +158,17 @@ body {
   background-color: #f4f5f7;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"][type="number"] {
+  -moz-appearance: textfield;
+}
+
 /* Navbar Css */
 .navbar-toggler,
 button.responsive-navbar-nav:focus:not(:focus-visible),
@@ -457,6 +468,12 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   padding-top: 4px;
 }
 
+.footerPartOneR form .formInner:nth-child(1) label,
+.footerPartOneR form .formInner:nth-child(2) label,
+.footerPartOneR form .formInner:nth-child(3) label{
+  padding-top: 13px;
+}
+
 .footerPartOneR form label span {
   color: #ff5800;
 }
@@ -676,6 +693,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   padding: 1.5rem 2.125rem;
   transition: 0.4s all ease-in;
   border-radius: 20px;
+  text-decoration: none;
 }
 
 .ourServicesSection .serviceGridInner:hover {
@@ -700,6 +718,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   font-weight: 400;
   line-height: 16.8px;
   text-align: justify;
+  color: #787878;
   margin-bottom: 3.125rem;
   transition: 0.4s all ease-in;
 }
@@ -743,6 +762,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 .whyChooseUsInner {
   background-color: #fff;
   padding: 3.125rem;
+  border-radius: 20px;
 }
 
 .whyChooseUs .serviceGrid {
@@ -827,6 +847,9 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   color: #292929;
 }
 
+.clientSection .carousel-caption {
+  bottom: 0;
+}
 .clientSection .carousel-caption h6 {
   font-family: Gilroy-SemiBold;
   font-size: 24px;
@@ -985,7 +1008,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 
 .whyWeAreHereMain {
   padding: 0 2.375rcap;
-  margin: 20px 0 90px;
+  margin: 20px 0 110px;
 }
 
 .whyWeAreHereInner {
@@ -1045,6 +1068,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   padding: 18px;
   transition: 0.7s all ease;
   border-radius: 14px;
+  text-decoration: none;
 }
 
 .keyPointsInner svg {
@@ -1055,6 +1079,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 .keyPointsInner p {
   text-align: center;
   transition: 0.7s all ease;
+  color: #292929;
 }
 
 .keyPointsInner:hover {
@@ -1113,6 +1138,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   display: flex;
 }
 
+.serviceKeyFeatures .letsGrow,
 .serviceKeyFeaturesMain .letsGrow {
   margin: 30px 0 20px;
 }
@@ -1129,6 +1155,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   font-weight: 400;
   line-height: 31.54px;
   color: #292929;
+  text-align: justify;
 }
 
 .websitePerformanceSection {
@@ -1164,7 +1191,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 
 .websitePerformanceR img {
   position: absolute;
-  right: 0;
+  right: 30px;
   height: 466px;
   top: -35px;
 }
