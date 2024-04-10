@@ -29,6 +29,9 @@
     font-size: 20px;
     line-height: 27px;
   }
+  .first_hero_section picture img {
+    max-width: 90%;
+  }
 }
 
 @media (max-width: 991px) {
@@ -77,7 +80,9 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .whyChooseDesc p {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 17.6px;
+    text-align: justify;
   }
   .navbar-collapse.collapse.show {
     background-color: #f4f5f7;
@@ -128,8 +133,10 @@
   .titleWithSpan img,
   .websitePerformanceR,
   .page_head_text p br,
+  .serviceGridInner h5 br,
   .titleWithSpan span br,
   .logoDiv,
+  .serviceKeyFeatures small br,
   .heroSectionL p br {
     display: none;
   }
@@ -141,20 +148,46 @@
   .overViewSection,
   .websitePerformanceSection,
   .whatWeDOSection {
-    padding: 0 20px;
+    padding: 0 13px;
   }
   .whyWeAreHereMain {
     margin: 20px 0 40px;
   }
-  .aboutWhyChooseUs {
-    padding: 20px;
+  .serviceKeyFeatures .letsGrow{
+    margin: 20px 0 0;
+  }
+  .aboutWhyChooseUs,
+  .whyChooseUs,
+  .clientSection,
+  .ourServicesSection {
+    padding: 13px;
+  }
+  .aboutWhyChooseUsMainR {
+    margin: 0 0 40px;
+  }
+  .clientSection {
+    padding-bottom: 40px;
   }
   .serviceKeyFeatures {
     /* padding: 25px 20px; */
     padding: 15px;
   }
+  .serviceGrid span {
+    color: #f9c704;
+  }
+  .serviceGrid span svg path {
+    fill: #f9c704;
+    color: #f9c704;
+  }
   .whatWeDOSectionInner {
-    padding: 20px;
+    padding: 40px 20px;
+  }
+  .clientSection .carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+  }
+  .whatWeDOSectionInner .text-center {
+    text-align: left !important;
   }
   .heroSection {
     gap: 60px;
@@ -228,11 +261,22 @@
   .heroSectionR {
     padding: 0;
   }
+  .heroSectionL {
+    margin-top: 40px;
+  }
   .footerPartTwo {
     flex-wrap: wrap;
   }
   .aboutWhyChooseUs p {
-    margin: 30px 0;
+    margin: 40px 0;
+  }
+  .aboutWhyChooseUsMainL {
+    margin: 30px 0 0;
+  }
+  .websiteDevelopementMain .serviceKeyFeatures,
+  .digitalMarketingAgencyMain .serviceKeyFeatures,
+  .hotelRevenueManagement .serviceKeyFeatures {
+    margin-top: 22px;
   }
   .footerPartOne {
     flex-direction: column;
@@ -240,8 +284,8 @@
   .footerPartOneR form,
   .footerPartOneR::after {
     width: 100%;
-    left: -12px;
-    top: 10px;
+    left: -11px;
+    top: 33px;
   }
 
   .footerPartOneL p,
@@ -263,7 +307,10 @@
   }
   .footerPartOneR form label {
     font-size: 12px;
-    line-height: 27.31px;
+    line-height: 14.4px;
+  }
+  .footerPartOneR::after {
+    height: 358px;
   }
   .footerPartOneR form input {
     font-size: 8px;
@@ -281,6 +328,7 @@
   }
   .overViewBgImage {
     padding-top: 103px;
+    padding-inline: 20px;
   }
   .overViewSection {
     margin-top: -65px;
@@ -289,12 +337,16 @@
     grid-template-columns: 1fr;
   }
   .serviceGridInner {
-    padding-block: 20px;
+    padding-bottom: 20px;
   }
   .serviceGridInner h5 {
     font-size: 14px;
     line-height: 17.15px;
     margin: 10px 0;
+  }
+  .ourServicesSection .serviceGridInner h5 {
+    font-size: 18px;
+    line-height: 22.05px;
   }
   .serviceGridInner p {
     font-size: 12px;
@@ -304,7 +356,7 @@
     max-width: 30px;
   }
   .whyChooseUs .serviceGrid {
-    margin-top: 0;
+    margin-top: 20px;
   }
   .whyChooseUsInner {
     padding: 15px;
@@ -335,6 +387,7 @@
     flex-wrap: wrap;
     justify-content: center !important;
     align-items: center;
+    padding: 23px 16px 30px;
   }
   .reviewStars img {
     max-width: 20px;
@@ -373,18 +426,28 @@
   .page_head_text p {
     font-size: 12px;
     line-height: 14.4px;
-    margin: 30px 0;
+    margin: 30px 0 50px;
+  }
+  .first_hero_section picture img {
+    max-width: 100%;
   }
   .serviceKeyFeatures h6 {
     font-size: 16px;
     line-height: 19.41px;
     padding: 20px 10px;
     text-align: justify;
+    margin: 25px 0;
   }
   .serviceKeyFeatures small {
     font-size: 12px;
     line-height: 14.56px;
     text-align: justify;
+  }
+  .first_hero_section {
+    margin: 33px 0 0;
+  }
+  .first_hero_section .letsGrow {
+    margin: 40px 0;
   }
   .first_hero_section small {
     font-size: 14px;
@@ -410,6 +473,7 @@
     font-size: 36.02px;
     line-height: 32.42px;
   }
+
   .modal-body .footerPartOneL p {
     margin: 14px 0;
   }
@@ -436,7 +500,7 @@
     font-size: 10.81px;
     line-height: 24.6px;
   }
-  .modal-dialog .footerPartOne{
+  .modal-dialog .footerPartOne {
     padding: 0;
   }
   .serviceOptions {

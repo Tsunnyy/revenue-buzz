@@ -598,12 +598,13 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   margin-top: 3.438rem;
 }
 
-.heroSectionL span {
+.heroSectionL > span {
   font-family: Gilroy-Light;
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
   color: #292929;
+  padding-left: 7px;
 }
 
 .heroSectionL h2 {

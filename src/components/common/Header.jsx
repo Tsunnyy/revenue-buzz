@@ -97,10 +97,7 @@ const Header = () => {
           aria-controls="responsive-navbar-nav"
           onClick={() => setExpanded(!expanded)}
         />
-        <Navbar.Collapse
-          id="responsive-navbar-nav"
-          className="justify-content-end"
-        >
+        <Navbar.Collapse>
           <ul className="d-flex align-items-center">
             <li>
               <Link to="/aboutus">About Us</Link>

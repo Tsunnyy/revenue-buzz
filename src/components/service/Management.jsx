@@ -6,7 +6,7 @@ import heroImage from "/images/service/management.png";
 import heroMobImage from "/images/service/management_mob.png";
 import ServiceIntro from "./../common/ServiceIntro";
 import Commitment from "./../common/Commitment";
-import ContactModal from './../common/ContactModal';
+import ContactModal from "./../common/ContactModal";
 
 const Management = () => {
   const [expanded, setExpanded] = useState(false);
@@ -54,7 +54,7 @@ const Management = () => {
 
   return (
     <>
-    <ContactModal show={show} handleClose={handleCloseModal} />
+      <ContactModal show={show} handleClose={handleCloseModal} />
 
       <div className="hotelRevenueManagement">
         {/* <div className="first_hero_section text-center">
