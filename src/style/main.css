@@ -1296,4 +1296,8 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   cursor: pointer;
   margin-right: 10px;
 }
+
+.navbar-expand-lg .navbar-collapse{
+  justify-content: end;
+}
 /* Modal CSS */
