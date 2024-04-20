@@ -28,10 +28,9 @@ const Home = () => {
             <h2>Revenue</h2>
             <h2 className="dark">Excellence</h2>
             <p>
-              Lorem, ipsum dolor{" "}
-              <span>sit amet consectetur adipisicing elit. Officia,</span>{" "}
-              <br />
-              quos.
+              India's leading
+              <span> Revenue Management & Digital Marketing</span> <br />
+              Company for Hotels, Resorts and Villas
             </p>
             <button className="letsGrow" onClick={() => setShow(true)}>
               Lets Grow
@@ -87,13 +86,15 @@ const Home = () => {
             <div>
               <h3 className="title">Our Services</h3>
               <span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et <br /> dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud e
+                Empower your hotel's revenue management with RevenueBuzz. Our
+                advanced analytics and industry expertise optimize pricing,
+                maximize revenue, and <br /> provide data-driven insights,
+                ensuring your business thrives in the competitive hospitality
+                landscape.
               </span>
             </div>
             <button className="letsGrow" onClick={() => setShow(true)}>
-              Lets Grow
+              Know More
             </button>
           </div>
           <div className="serviceGrid">

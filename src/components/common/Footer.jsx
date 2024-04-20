@@ -155,6 +155,7 @@ const Footer = () => {
                       id="message"
                       required
                       rows="3"
+                      placeholder="Message"
                     ></textarea>
                   </div>
                   <div className="formInner">

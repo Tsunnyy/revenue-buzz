@@ -506,4 +506,7 @@
   .serviceOptions {
     display: none;
   }
+  .footerPartOneL .absLogo {
+    bottom: 10px;
+  }
 }

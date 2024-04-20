@@ -35,14 +35,13 @@ const ContactModal = ({ show, handleClose }) => {
         </buttoon>
         <Modal.Body>
           <div className="footerPartOne">
-            <div className="footerPartOneL">
+            <div className="footerPartOneL position-relative">
               <h2>Contact Us</h2>
               <p>
                 Experience growth effortlessly! Take that first step towards
                 success with just one click.
               </p>
               <span>Don't miss out!</span>
-
               <div className="quickContact">
                 <a href="mailto:info@revenuebuzz.in">
                   <svg
@@ -125,10 +124,15 @@ const ContactModal = ({ show, handleClose }) => {
                   Mumbai, Maharshatra
                 </p>
               </div>
+              <img
+                src="/images/footer_logo.svg"
+                alt="Footer Logo"
+                class="img-fluid absLogo"
+              />
             </div>
             <div className="footerPartOneR">
               <form>
-                <div className="row m-0">
+                <div className="row m-0 gapClass">
                   <div className="col-md-6 ps-0">
                     <div className="formInner">
                       <label htmlFor="name">
@@ -277,7 +281,7 @@ const ContactModal = ({ show, handleClose }) => {
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        />
+                      />
                       <path
                         d="M7.75 12L10.58 14.83L16.25 9.17004"
                         stroke={webDevChecked ? "#fff" : "#787878"}

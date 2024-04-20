@@ -217,7 +217,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   line-height: 14.4px;
   color: #292929;
   text-decoration: none;
-  font-family: Gilroy-Regular;
+  font-family: Gilroy-Medium;
   transition: 0.4s all;
 }
 
@@ -266,8 +266,8 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 }
 
 .navbar ul li .dropdown-menu.show {
-  max-width: 120px;
-  min-width: 120px;
+  max-width: 130px;
+  min-width: 130px;
   box-shadow: 0px 0px 16px 0px #00000026;
   border: none;
 }
@@ -327,7 +327,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 .letsGrow {
   display: inline-block;
   border: 1px solid #292929;
-  font-family: Gilroy-Medium;
+  font-family: Gilroy-Semibold;
   font-size: 12px;
   font-weight: 400;
   line-height: 14.56px;
@@ -385,6 +385,12 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   gap: 12.188rem;
   justify-content: space-between;
   padding-bottom: 7.438rem;
+}
+
+.footerPartOneL .absLogo {
+  position: absolute;
+  right: 0;
+  bottom: 140px;
 }
 
 .footerPartOneL h2 {
@@ -931,9 +937,9 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 }
 
 .first_hero_section small {
-  font-family: Gilroy-Medium;
+  font-family: Gilroy-Regular;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 16.98px;
   text-align: center;
   color: #292929;
@@ -1199,7 +1205,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 
 /* Modal CSS */
 .modal-content {
-  background: #272727;
+  background: #292929;
   box-shadow: 0px 0px 20px 0px #00000026;
 }
 
@@ -1213,6 +1219,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 
 .modal-dialog .footerPartOneR form {
   width: 100%;
+  margin: 0;
 }
 
 .modal-dialog .footerPartOne {
@@ -1226,7 +1233,6 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 
 .modal-body .footerPartOneL h2 {
   font-family: Gilroy-Medium;
-
   font-size: 36px;
   line-height: 32.4px;
 }
@@ -1234,20 +1240,38 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 .modal-body .footerPartOneL span {
   font-family: Gilroy-Light;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 21.6px;
+}
+
+.modal-body .quickContact {
+  margin-top: 2.5rem;
+}
+
+.modal-body .footerPartOneL {
+  margin-top: 20px;
 }
 
 .modal-body .quickContact a,
 .modal-body .quickContact p {
-  font-family: Gilroy-Medium;
+  font-family: Gilroy-Regular;
   font-size: 16px;
   font-weight: 400;
   line-height: 65.5px;
 }
+
+.modal-body .gapClass {
+  gap: 15px 0;
+}
+
 .modal-body .formInner {
   grid-template-columns: 1fr;
   gap: 8px;
+  margin: 0;
+}
+
+.modal-body .footerPartOneR form .formInner label {
+  padding-top: 0;
 }
 
 .modal-body .formInner:has(button[type="submit"]) {
@@ -1269,7 +1293,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 .serviceOptionsInner {
@@ -1292,12 +1316,12 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
 }
 
 .serviceOptions svg {
-  width: 24px;
+  width: 30px;
   cursor: pointer;
   margin-right: 10px;
 }
 
-.navbar-expand-lg .navbar-collapse{
+.navbar-expand-lg .navbar-collapse {
   justify-content: end;
 }
 /* Modal CSS */
