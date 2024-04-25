@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ContactModal from "./ContactModal";
 
 const Footer = () => {
+  const [show, setShow] = useState(false);
+
+  const handleOpenModal = () => {
+    setShow(true);
+  };
+
+  const handleCloseModal = () => {
+    setShow(false);
+  };
   return (
     <>
+      <ContactModal show={show} handleClose={handleCloseModal} />
       <footer id="footer">
         <div className="footerMain">
           <div className="padding-lr-footer">
@@ -215,7 +226,7 @@ const Footer = () => {
                   <Link to="/" onClick={() => window.scrollTo(0, 0)}>
                     Blogs
                   </Link>
-                  <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+                  <Link to="/" onClick={() => setShow(true)}>
                     Contact Us
                   </Link>
                 </div>
@@ -263,7 +274,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="copyRightTag">
-          <p className="text-center">Copyright © 2024 - RevenueBuzz</p>
+          <p className="text-center">
+            Copyright © {new Date().getFullYear()} - RevenueBuzz
+          </p>
         </div>
       </footer>
     </>
