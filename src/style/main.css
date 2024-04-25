@@ -178,7 +178,7 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   box-shadow: none;
 }
 
-.navbar-toggler-icon {
+.openMenu {
   background: url(/images/icons/menu.svg);
   width: 70px;
   height: 24px;

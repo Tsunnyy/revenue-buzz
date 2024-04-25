@@ -95,10 +95,10 @@
     right: 0;
     top: 0;
     height: 100%;
-    width: 100%;
+    width: 50%;
     display: block;
   }
-  .navbar-toggler{
+  .openMenu{
     position: relative;
     z-index: 10;
   }
@@ -428,7 +428,7 @@
   }
   .navbar-collapse.collapse.show, .menuOnMobView {
     padding: 20px 10px;
-    width: 100%;
+    width: 69%;
   }
   .whatWeDOSection .serviceGrid {
     grid-template-columns: 1fr;

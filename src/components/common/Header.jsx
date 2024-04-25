@@ -93,7 +93,11 @@ const Header = () => {
             />
           </svg>
         </Link>
-        <Navbar.Toggle onClick={() => setExpanded(!expanded)} />
+        {/* <Navbar.Toggle onClick={() => setExpanded(!expanded)} /> */}
+        <button
+          className="openMenu"
+          onClick={() => setExpanded(!expanded)}
+        ></button>
         <>
           <Navbar.Collapse>
             <ul className="d-flex align-items-center">
