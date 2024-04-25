@@ -183,6 +183,8 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   width: 70px;
   height: 24px;
   border: none;
+  outline: none;
+  display: none;
 }
 
 .padding-lr-nav {

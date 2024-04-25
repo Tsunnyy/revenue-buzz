@@ -101,10 +101,12 @@
   .openMenu{
     position: relative;
     z-index: 10;
+    display: block;
   }
   .menuOnMobView ul {
     flex-direction: column;
-    align-items: start !important;
+    align-items: end !important;
+    margin-top: 50px;
   }
   .navbar ul li {
     display: none;

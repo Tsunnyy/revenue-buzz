@@ -283,7 +283,7 @@ const Header = () => {
                 </li>
                 <div className="after991px headerContactInfo">
                   <img
-                    src="/images/white_logo.png"
+                    src="/images/white_logo.svg"
                     alt="Logo"
                     className="img-fluid"
                   />
