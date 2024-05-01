@@ -517,6 +517,10 @@ button.responsive-navbar-nav:focus:not(:focus-visible),
   resize: none;
 }
 
+.gap8px {
+  gap: 8px 0;
+}
+
 .formInner .error {
   font-size: 12px;
   color: red;
