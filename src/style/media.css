@@ -84,7 +84,7 @@
     line-height: 17.6px;
     text-align: justify;
   }
-  .navbar-collapse.collapse.show{
+  .navbar-collapse.collapse.show {
     display: none;
   }
   .menuOnMobView {
@@ -92,13 +92,19 @@
     box-shadow: 0px 0px 20px 0px #00000040;
     padding: 30px;
     position: fixed;
-    right: 0;
+    right: -100%;
     top: 0;
     height: 100%;
     width: 50%;
     display: block;
+    z-index: 3;
+    transition: all 0.3s ease;
   }
-  .openMenu{
+  .menuOnMobView.show {
+    right: 0;
+    transition: all 0.3s ease;
+  }
+  .openMenu {
     position: relative;
     z-index: 10;
     display: block;
@@ -266,7 +272,7 @@
     font-size: 16px;
     line-height: 21.6px;
   }
-  .footerPartOneR form{
+  .footerPartOneR form {
     border-radius: 12px;
   }
   .heroSectionL,
@@ -428,7 +434,8 @@
   .reviewStars {
     gap: 5px;
   }
-  .navbar-collapse.collapse.show, .menuOnMobView {
+  .navbar-collapse.collapse.show,
+  .menuOnMobView {
     padding: 20px 10px;
     width: 69%;
   }

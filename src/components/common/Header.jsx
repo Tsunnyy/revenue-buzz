@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
@@ -10,6 +10,14 @@ const Header = () => {
   const [expanded, setExpanded] = useState(false);
   const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    if (expanded) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "visible";
+    }
+  }, [expanded]);
+
   const handleOpenModal = () => {
     setShow(true);
   };
@@ -17,15 +25,18 @@ const Header = () => {
   const handleCloseModal = () => {
     setShow(false);
   };
+
   return (
     <>
       <ContactModal show={show} handleClose={handleCloseModal} />
-      <Navbar
-        className="padding-lr-nav"
-        expand="lg"
-        // collapseOnSelect
-        // expanded={expanded}
-      >
+      <div
+        className="overlay"
+        onClick={() => {
+          document.querySelector(".menuOnMobView").classList.remove("show");
+          setExpanded(false);
+        }}
+      ></div>
+      <Navbar className="padding-lr-nav" expand="lg">
         <Link to="/">
           <svg
             width="111"
@@ -93,10 +104,12 @@ const Header = () => {
             />
           </svg>
         </Link>
-        {/* <Navbar.Toggle onClick={() => setExpanded(!expanded)} /> */}
         <button
           className="openMenu"
-          onClick={() => setExpanded(!expanded)}
+          onClick={() => {
+            document.querySelector(".menuOnMobView").classList.toggle("show");
+            setExpanded(!expanded);
+          }}
         ></button>
         <>
           <Navbar.Collapse>
@@ -246,133 +259,133 @@ const Header = () => {
               </div>
             </ul>
           </Navbar.Collapse>
-          {expanded ? (
-            <div className="menuOnMobView">
-              <ul className="d-flex">
-                <li onClick={() => setExpanded(false)} className="after991px">
-                  <Link to="/aboutus">About Us</Link>
-                </li>
-                <li onClick={() => setExpanded(false)} className="after991px">
-                  <Link to="/revenuemanagement">Revenue Management</Link>
-                </li>
-                <li onClick={() => setExpanded(false)} className="after991px">
-                  <Link to="/digital-marketing-agency">Digital Marketing</Link>
-                </li>
-                <li onClick={() => setExpanded(false)} className="after991px">
-                  <Link to="/website-development">Web Development</Link>
-                </li>
-                <li onClick={() => setExpanded(false)} className="after991px">
-                  <Link to="/">Blogs</Link>
-                </li>
-                <li
-                  onClick={() => {
-                    setExpanded(false);
-                    setShow(true);
-                  }}
-                  className="after991px"
-                >
-                  <button>Contact Us</button>
-                </li>
-                <li>
-                  <Link to="/">Blogs</Link>
-                </li>
-                <li>
-                  <button className="letsGrow" onClick={() => setShow(true)}>
-                    Lets Grow
-                  </button>
-                </li>
-                <div className="after991px headerContactInfo">
-                  <img
-                    src="/images/white_logo.svg"
-                    alt="Logo"
-                    className="img-fluid"
-                  />
-                  <div className="quickContact">
-                    <a href="mailto:info@revenuebuzz.in">
-                      <svg
-                        width="32"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M22.27 27.265H9.17C5.24 27.265 2.62 25.3 2.62 20.715V11.545C2.62 6.96 5.24 4.995 9.17 4.995H22.27C26.2 4.995 28.82 6.96 28.82 11.545V20.715C28.82 25.3 26.2 27.265 22.27 27.265Z"
-                          stroke="white"
-                          stroke-width="1.31"
-                          stroke-miterlimit="10"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M26.0297 7.61496L18.1697 15.475C16.8204 16.5492 14.6065 16.5492 13.2572 15.475L4.74219 6.95996"
-                          stroke="white"
-                          stroke-width="1.31"
-                          stroke-miterlimit="10"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      info@revenuebuzz.in
-                    </a>
-                    <a href="tel:+919699376052">
-                      <svg
-                        width="23"
-                        height="29"
-                        viewBox="0 0 23 29"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M22.2 7.76997V20.87C22.2 26.11 20.89 27.42 15.65 27.42H7.78999C2.54999 27.42 1.23999 26.11 1.23999 20.87V7.76997C1.23999 2.52997 2.54999 1.21997 7.78999 1.21997H15.65C20.89 1.21997 22.2 2.52997 22.2 7.76997Z"
-                          stroke="white"
-                          stroke-width="1.31"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M14.34 5.80493H9.09998"
-                          stroke="white"
-                          stroke-width="1.31"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M11.72 23.6209C12.8414 23.6209 13.7505 22.7118 13.7505 21.5904C13.7505 20.469 12.8414 19.5599 11.72 19.5599C10.5986 19.5599 9.68951 20.469 9.68951 21.5904C9.68951 22.7118 10.5986 23.6209 11.72 23.6209Z"
-                          stroke="white"
-                          stroke-width="1.31"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      +91 9699376052
-                    </a>
-                    <p>
-                      <svg
-                        width="32"
-                        height="33"
-                        viewBox="0 0 32 33"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16.03 18.3833C18.2873 18.3833 20.1172 16.5534 20.1172 14.2961C20.1172 12.0388 18.2873 10.2089 16.03 10.2089C13.7727 10.2089 11.9428 12.0388 11.9428 14.2961C11.9428 16.5534 13.7727 18.3833 16.03 18.3833Z"
-                          stroke="white"
-                          stroke-width="1.31"
-                        />
-                        <path
-                          d="M5.0522 11.9119C7.6329 0.567337 24.4402 0.580438 27.0078 11.925C28.5143 18.5798 24.3747 24.2128 20.746 27.6974C18.1129 30.2388 13.9471 30.2388 11.3009 27.6974C7.6853 24.2128 3.5457 18.5667 5.0522 11.9119Z"
-                          stroke="white"
-                          stroke-width="1.31"
-                        />
-                      </svg>
-                      Mumbai, Maharshatra
-                    </p>
-                  </div>
+          <div className={`menuOnMobView ${expanded ? "show" : ""}`}>
+            <ul className="d-flex">
+              <li onClick={() => setExpanded(false)} className="after991px">
+                <Link to="/aboutus">About Us</Link>
+              </li>
+              <li onClick={() => setExpanded(false)} className="after991px">
+                <Link to="/revenuemanagement">Revenue Management</Link>
+              </li>
+              <li onClick={() => setExpanded(false)} className="after991px">
+                <Link to="/digital-marketing-agency">Digital Marketing</Link>
+              </li>
+              <li onClick={() => setExpanded(false)} className="after991px">
+                <Link to="/website-development">Web Development</Link>
+              </li>
+              <li onClick={() => setExpanded(false)} className="after991px">
+                <Link to="/">Blogs</Link>
+              </li>
+              <li
+                onClick={() => {
+                  setExpanded(false);
+                  setShow(true);
+                }}
+                className="after991px"
+              >
+                <button>Contact Us</button>
+              </li>
+              <li>
+                <Link to="/">Blogs</Link>
+              </li>
+              <li>
+                <button className="letsGrow" onClick={() => setShow(true)}>
+                  Lets Grow
+                </button>
+              </li>
+              <div className="after991px headerContactInfo">
+                <img
+                  src="/images/white_logo.svg"
+                  alt="Logo"
+                  className="img-fluid"
+                />
+                <div className="quickContact">
+                  <a href="mailto:info@revenuebuzz.in">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.27 27.265H9.17C5.24 27.265 2.62 25.3 2.62 20.715V11.545C2.62 6.96 5.24 4.995 9.17 4.995H22.27C26.2 4.995 28.82 6.96 28.82 11.545V20.715C28.82 25.3 26.2 27.265 22.27 27.265Z"
+                        stroke="white"
+                        stroke-width="1.31"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M26.0297 7.61496L18.1697 15.475C16.8204 16.5492 14.6065 16.5492 13.2572 15.475L4.74219 6.95996"
+                        stroke="white"
+                        stroke-width="1.31"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    info@revenuebuzz.in
+                  </a>
+                  <a href="tel:+919699376052">
+                    <svg
+                      width="23"
+                      height="29"
+                      viewBox="0 0 23 29"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.2 7.76997V20.87C22.2 26.11 20.89 27.42 15.65 27.42H7.78999C2.54999 27.42 1.23999 26.11 1.23999 20.87V7.76997C1.23999 2.52997 2.54999 1.21997 7.78999 1.21997H15.65C20.89 1.21997 22.2 2.52997 22.2 7.76997Z"
+                        stroke="white"
+                        stroke-width="1.31"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14.34 5.80493H9.09998"
+                        stroke="white"
+                        stroke-width="1.31"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11.72 23.6209C12.8414 23.6209 13.7505 22.7118 13.7505 21.5904C13.7505 20.469 12.8414 19.5599 11.72 19.5599C10.5986 19.5599 9.68951 20.469 9.68951 21.5904C9.68951 22.7118 10.5986 23.6209 11.72 23.6209Z"
+                        stroke="white"
+                        stroke-width="1.31"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    +91 9699376052
+                  </a>
+                  <p>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.03 18.3833C18.2873 18.3833 20.1172 16.5534 20.1172 14.2961C20.1172 12.0388 18.2873 10.2089 16.03 10.2089C13.7727 10.2089 11.9428 12.0388 11.9428 14.2961C11.9428 16.5534 13.7727 18.3833 16.03 18.3833Z"
+                        stroke="white"
+                        stroke-width="1.31"
+                      />
+                      <path
+                        d="M5.0522 11.9119C7.6329 0.567337 24.4402 0.580438 27.0078 11.925C28.5143 18.5798 24.3747 24.2128 20.746 27.6974C18.1129 30.2388 13.9471 30.2388 11.3009 27.6974C7.6853 24.2128 3.5457 18.5667 5.0522 11.9119Z"
+                        stroke="white"
+                        stroke-width="1.31"
+                      />
+                    </svg>
+                    Mumbai, Maharshatra
+                  </p>
                 </div>
-              </ul>
-            </div>
-          ) : null}
+              </div>
+            </ul>
+          </div>
+          {/* {expanded ? (
+          ) : null} */}
         </>
       </Navbar>
     </>
