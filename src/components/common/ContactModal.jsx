@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 const ContactModal = ({ show, handleClose }) => {
   const [revenueManagementChecked, setRevenueManagementChecked] =
     useState(false);
   const [socialMarketingChecked, setSocialMarketingChecked] = useState(false);
   const [webDevChecked, setWebDevChecked] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+  // console.log(errors);
 
   const handleCheckboxChange = (e) => {
     const { id, checked } = e.target;
@@ -127,11 +137,11 @@ const ContactModal = ({ show, handleClose }) => {
               <img
                 src="/images/footer_logo.svg"
                 alt="Footer Logo"
-                class="img-fluid absLogo"
+                className="img-fluid absLogo"
               />
             </div>
             <div className="footerPartOneR">
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="row m-0 gapClass">
                   <div className="col-md-6 ps-0">
                     <div className="formInner">
@@ -143,8 +153,14 @@ const ContactModal = ({ show, handleClose }) => {
                         name="name"
                         id="name"
                         placeholder="Name"
-                        required
+                        {...register("name", {
+                          required: true,
+                          pattern: /^[A-Za-z ]+$/,
+                        })}
                       />
+                      {errors.name && (
+                        <span className="error">Name is required</span>
+                      )}
                     </div>
                   </div>
                   <div className="col-md-6 pe-0">
@@ -157,8 +173,14 @@ const ContactModal = ({ show, handleClose }) => {
                         placeholder="Email"
                         name="email"
                         id="email"
-                        required
+                        {...register("email", {
+                          required: true,
+                          pattern: /^\S+@\S+$/i,
+                        })}
                       />
+                      {errors.email && (
+                        <span className="error">Valid email is required</span>
+                      )}
                     </div>
                   </div>
                   <div className="col-md-6 ps-0">
@@ -171,8 +193,18 @@ const ContactModal = ({ show, handleClose }) => {
                         placeholder="Phone No"
                         name="mobile"
                         id="mobile"
-                        required
+                        {...register("mobile", {
+                          required: true,
+                          minLength: 10,
+                          maxLength: 10,
+                          pattern: /^[0-9]*$/, // Numeric validation
+                        })}
                       />
+                      {errors.mobile && (
+                        <span className="error">
+                          Phone number must be 10 digits
+                        </span>
+                      )}
                     </div>
                   </div>
                   <div className="col-md-6 pe-0">
@@ -183,6 +215,7 @@ const ContactModal = ({ show, handleClose }) => {
                         name="company_or_hotel"
                         placeholder="Company or Hotel"
                         id="company_or_hotel"
+                        {...register("company_or_hotel")}
                       />
                     </div>
                   </div>
@@ -195,9 +228,12 @@ const ContactModal = ({ show, handleClose }) => {
                         name="message"
                         placeholder="Message"
                         id="message"
-                        required
+                        {...register("message", { required: true })}
                         rows="3"
                       ></textarea>
+                      {errors.message && (
+                        <span className="error">Message is required</span>
+                      )}
                     </div>
                   </div>
                 </div>

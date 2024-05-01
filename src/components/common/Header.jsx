@@ -29,13 +29,15 @@ const Header = () => {
   return (
     <>
       <ContactModal show={show} handleClose={handleCloseModal} />
-      <div
-        className="overlay"
-        onClick={() => {
-          document.querySelector(".menuOnMobView").classList.remove("show");
-          setExpanded(false);
-        }}
-      ></div>
+      {expanded ? (
+        <div
+          className="overlay"
+          onClick={() => {
+            document.querySelector(".menuOnMobView").classList.remove("show");
+            setExpanded(false);
+          }}
+        ></div>
+      ) : null}
       <Navbar className="padding-lr-nav" expand="lg">
         <Link to="/">
           <svg
