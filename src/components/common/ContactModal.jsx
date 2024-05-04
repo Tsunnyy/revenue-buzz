@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useFormik } from "formik";
+import { formValidation } from "./../../formValidation";
 
 const ContactModal = ({ show, handleClose }) => {
   const [revenueManagementChecked, setRevenueManagementChecked] =
@@ -8,14 +10,22 @@ const ContactModal = ({ show, handleClose }) => {
   const [socialMarketingChecked, setSocialMarketingChecked] = useState(false);
   const [webDevChecked, setWebDevChecked] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  let initialValues = {
+    name: "",
+    email: "",
+    message: "",
+    company: "",
+    mobile: "",
+  };
 
-  const onSubmit = (data) => console.log(data);
-  // console.log(errors);
+  const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: formValidation,
+      onSubmit: (data) => {
+        console.log(data);
+      },
+    });
 
   const handleCheckboxChange = (e) => {
     const { id, checked } = e.target;
@@ -141,7 +151,7 @@ const ContactModal = ({ show, handleClose }) => {
               />
             </div>
             <div className="footerPartOneR">
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form onSubmit={handleSubmit}>
                 <div className="row m-0 gapClass">
                   <div className="col-md-6 ps-0">
                     <div className="formInner">
@@ -150,15 +160,18 @@ const ContactModal = ({ show, handleClose }) => {
                       </label>
                       <input
                         type="text"
+                        autoComplete="off"
                         id="name"
                         placeholder="Name"
-                        {...register("name", {
-                          required: true,
-                          pattern: /^[A-Za-z ]+$/,
-                        })}
+                        name="name"
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {errors.name && (
-                        <span className="error">Name is required</span>
+                      {errors.name && touched.name ? (
+                        <span className="error">{errors.name}</span>
+                      ) : (
+                        ""
                       )}
                     </div>
                   </div>
@@ -169,15 +182,18 @@ const ContactModal = ({ show, handleClose }) => {
                       </label>
                       <input
                         type="email"
+                        autoComplete="off"
                         placeholder="Email"
                         id="email"
-                        {...register("email", {
-                          required: true,
-                          pattern: /^\S+@\S+$/i,
-                        })}
+                        name="email"
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {errors.email && (
-                        <span className="error">Valid email is required</span>
+                      {errors.email && touched.email ? (
+                        <span className="error">{errors.email}</span>
+                      ) : (
+                        ""
                       )}
                     </div>
                   </div>
@@ -187,20 +203,19 @@ const ContactModal = ({ show, handleClose }) => {
                         Phone No<span>*</span>
                       </label>
                       <input
-                        type="number"
+                        type="tel"
+                        autoComplete="off"
                         placeholder="Phone No"
                         id="mobile"
-                        {...register("mobile", {
-                          required: true,
-                          minLength: 10,
-                          maxLength: 10,
-                          pattern: /^[0-9]*$/, // Numeric validation
-                        })}
+                        name="mobile"
+                        value={values.mobile}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {errors.mobile && (
-                        <span className="error">
-                          Phone number must be 10 digits
-                        </span>
+                      {errors.mobile && touched.mobile ? (
+                        <span className="error">{errors.mobile}</span>
+                      ) : (
+                        ""
                       )}
                     </div>
                   </div>
@@ -209,9 +224,13 @@ const ContactModal = ({ show, handleClose }) => {
                       <label htmlFor="company_or_hotel">Company or Hotel</label>
                       <input
                         type="text"
+                        autoComplete="off"
                         placeholder="Company or Hotel"
                         id="company_or_hotel"
-                        {...register("company_or_hotel")}
+                        name="company_or_hotel"
+                        value={values.company_or_hotel}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -221,13 +240,19 @@ const ContactModal = ({ show, handleClose }) => {
                         Message<span>*</span>
                       </label>
                       <textarea
+                        autoComplete="off"
                         placeholder="Message"
                         id="message"
-                        {...register("message", { required: true })}
+                        name="message"
                         rows="3"
+                        value={values.message}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       ></textarea>
-                      {errors.message && (
-                        <span className="error">Message is required</span>
+                      {errors.message && touched.message ? (
+                        <span className="error">{errors.message}</span>
+                      ) : (
+                        ""
                       )}
                     </div>
                   </div>

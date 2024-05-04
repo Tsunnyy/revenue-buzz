@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ContactModal from "./ContactModal";
 import { useFormik } from "formik";
-// import { useForm } from "react-hook-form";
 import { formValidation } from "./../../formValidation";
 
 const Footer = () => {
@@ -24,14 +23,6 @@ const Footer = () => {
         console.log(data);
       },
     });
-
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm();
-
-  // const onSubmit = (data) => console.log(data);
 
   const handleOpenModal = () => {
     setShow(true);
@@ -147,6 +138,7 @@ const Footer = () => {
                     <div className="d-flex flex-column gap8px">
                       <input
                         type="text"
+                        autoComplete="off"
                         id="name"
                         placeholder="Name"
                         name="name"
@@ -168,6 +160,7 @@ const Footer = () => {
                     <div className="d-flex flex-column gap8px">
                       <input
                         type="email"
+                        autoComplete="off"
                         placeholder="Email"
                         id="email"
                         name="email"
@@ -189,6 +182,7 @@ const Footer = () => {
                     <div className="d-flex flex-column gap8px">
                       <input
                         type="tel"
+                        autoComplete="off"
                         placeholder="Phone No"
                         id="mobile"
                         name="mobile"
@@ -208,6 +202,7 @@ const Footer = () => {
                     <div className="d-flex flex-column gap8px">
                       <input
                         type="text"
+                        autoComplete="off"
                         placeholder="Company or Hotel"
                         id="company_or_hotel"
                         name="company_or_hotel"
@@ -223,6 +218,7 @@ const Footer = () => {
                     </label>
                     <div className="d-flex flex-column gap8px">
                       <textarea
+                        autoComplete="off"
                         placeholder="Message"
                         id="message"
                         name="message"

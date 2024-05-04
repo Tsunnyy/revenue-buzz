@@ -1,7 +1,11 @@
 import * as Yup from "yup";
 
 export const formValidation = Yup.object({
-  name: Yup.string().min(3).required("Name is required"),
+  //   name: Yup.string().min(3).required("Name is required"),
+  name: Yup.string()
+    .min(3)
+    .matches(/^[^\d]+$/, "Name cannot contain numbers")
+    .required("Name is required"),
   email: Yup.string()
     .email("Please enter valid Email")
     .required("Pleaae enter email"),
