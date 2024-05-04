@@ -150,7 +150,6 @@ const ContactModal = ({ show, handleClose }) => {
                       </label>
                       <input
                         type="text"
-                        name="name"
                         id="name"
                         placeholder="Name"
                         {...register("name", {
@@ -171,7 +170,6 @@ const ContactModal = ({ show, handleClose }) => {
                       <input
                         type="email"
                         placeholder="Email"
-                        name="email"
                         id="email"
                         {...register("email", {
                           required: true,
@@ -191,7 +189,6 @@ const ContactModal = ({ show, handleClose }) => {
                       <input
                         type="number"
                         placeholder="Phone No"
-                        name="mobile"
                         id="mobile"
                         {...register("mobile", {
                           required: true,
@@ -212,7 +209,6 @@ const ContactModal = ({ show, handleClose }) => {
                       <label htmlFor="company_or_hotel">Company or Hotel</label>
                       <input
                         type="text"
-                        name="company_or_hotel"
                         placeholder="Company or Hotel"
                         id="company_or_hotel"
                         {...register("company_or_hotel")}
@@ -225,7 +221,6 @@ const ContactModal = ({ show, handleClose }) => {
                         Message<span>*</span>
                       </label>
                       <textarea
-                        name="message"
                         placeholder="Message"
                         id="message"
                         {...register("message", { required: true })}

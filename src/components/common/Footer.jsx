@@ -1,17 +1,37 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ContactModal from "./ContactModal";
-import { useForm } from "react-hook-form";
+import { useFormik } from "formik";
+// import { useForm } from "react-hook-form";
+import { formValidation } from "./../../formValidation";
 
 const Footer = () => {
   const [show, setShow] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  let initialValues = {
+    name: "",
+    email: "",
+    message: "",
+    company: "",
+    mobile: "",
+  };
+
+  const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: formValidation,
+      onSubmit: (data) => {
+        console.log(data);
+      },
+    });
+
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
+
+  // const onSubmit = (data) => console.log(data);
 
   const handleOpenModal = () => {
     setShow(true);
@@ -119,7 +139,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="footerPartOneR">
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit}>
                   <div className="formInner">
                     <label htmlFor="name">
                       Name<span>*</span>
@@ -127,21 +147,17 @@ const Footer = () => {
                     <div className="d-flex flex-column gap8px">
                       <input
                         type="text"
-                        name="name"
                         id="name"
                         placeholder="Name"
-                        {...register("name", {
-                          required: true,
-                          pattern: /^[a-zA-Z\s]*$/,
-                        })}
+                        name="name"
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {errors.name && errors.name.type === "required" && (
-                        <span className="error">Name is required</span>
-                      )}
-                      {errors.name && errors.name.type === "pattern" && (
-                        <span className="error">
-                          Name should not contain numbers
-                        </span>
+                      {errors.name && touched.name ? (
+                        <span className="error">{errors.name}</span>
+                      ) : (
+                        ""
                       )}
                     </div>
                   </div>
@@ -153,12 +169,16 @@ const Footer = () => {
                       <input
                         type="email"
                         placeholder="Email"
-                        name="email"
                         id="email"
-                        {...register("email", { required: true })}
+                        name="email"
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {errors.email && (
-                        <span className="error">Email is required</span>
+                      {errors.email && touched.email ? (
+                        <span className="error">{errors.email}</span>
+                      ) : (
+                        ""
                       )}
                     </div>
                   </div>
@@ -170,24 +190,17 @@ const Footer = () => {
                       <input
                         type="tel"
                         placeholder="Phone No"
-                        name="mobile"
                         id="mobile"
-                        {...register("mobile", {
-                          required: true,
-                          minLength: 10,
-                          maxLength: 10,
-                        })}
+                        name="mobile"
+                        value={values.mobile}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {errors.mobile && errors.mobile.type === "required" && (
-                        <span className="error">Phone No is required</span>
+                      {errors.mobile && touched.mobile ? (
+                        <span className="error">{errors.mobile}</span>
+                      ) : (
+                        ""
                       )}
-                      {errors.mobile &&
-                        (errors.mobile.type === "minLength" ||
-                          errors.mobile.type === "maxLength") && (
-                          <span className="error">
-                            Phone No should be 10 digits
-                          </span>
-                        )}
                     </div>
                   </div>
                   <div className="formInner">
@@ -195,10 +208,12 @@ const Footer = () => {
                     <div className="d-flex flex-column gap8px">
                       <input
                         type="text"
-                        name="company_or_hotel"
                         placeholder="Company or Hotel"
                         id="company_or_hotel"
-                        {...register("company_or_hotel")}
+                        name="company_or_hotel"
+                        value={values.company_or_hotel}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -208,14 +223,18 @@ const Footer = () => {
                     </label>
                     <div className="d-flex flex-column gap8px">
                       <textarea
-                        name="message"
                         placeholder="Message"
                         id="message"
-                        {...register("message", { required: true })}
+                        name="message"
                         rows="3"
+                        value={values.message}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       ></textarea>
-                      {errors.message && (
-                        <span className="error">Message is required</span>
+                      {errors.message && touched.message ? (
+                        <span className="error">{errors.message}</span>
+                      ) : (
+                        ""
                       )}
                     </div>
                   </div>
